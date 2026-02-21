@@ -144,7 +144,7 @@ export default function Personajes() {
 
               <button 
                 onClick={siguienteSeccion}
-                disabled={ultimoIndice >= personajesVisibles.length}
+                disabled={paginaActual === totalPaginas}
                 className="px-2 py-1 text-ms lg:text-xl lg:lg-6 lg:py-2 rounded-full cursor-pointer border border-green-500 bg-green-500 text-white hover:scale-105 disabled:opacity-30 disabled:hover:bg-transparent transition-all font-light lg:font-bold"
               >
                 Siguiente
