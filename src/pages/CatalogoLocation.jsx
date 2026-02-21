@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { locacionesAll } from "../helpers/PeticionAPI_Locaciones"
 
-export default function locaciones() {
+export default function Locaciones() {
   const [locacionesListados, setLocaciones] = useState([])
   const [cargando, setCargando] = useState(true)
   const [paginaActual, setPaginaActual] = useState(1)
@@ -56,12 +56,12 @@ export default function locaciones() {
         placeholder="Buscar personaje" 
         onChange={(e) => setFiltro(e.target.value)} 
         className="
-          w-full flex py-5 px-10 border-2 
-          text-2xl puppins-medium font-normal
+          w-full flex py-1 lg:py-2 px-5 lg:px-10 border-2 
+          lg:text-xl puppins-medium font-normal
           border-green-700 text-white 
           outline-none
-          rounded-2xl bg-green-700/20
-        hover:bg-green-700 
+          lg:rounded-2xl rounded-md bg-green-700/20
+        hover:bg-green-700 lg:mb-0 -mb-5
           transition-all duration-300 ease-in-out"
       />
 
