@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'rick-morty';
+    src: url('/public/fontRick_Morty.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'wubbal';
+    src: url('/public/Wubbal.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.rick-medium{
+  font-family: "rick-morty" !important;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.wubbal-medium{
+  font-family: "wubbal" !important;
+  font-weight: 500;
+  font-style: normal;
+}
+/* ------------- poppins -----------------*/
+.poppins-medium {
+  font-family: "Poppins" !important;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins" !important;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins" !important;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins" !important;
+  font-weight: 800;
+  font-style: normal;
+}
+ /* -----------------------pixelifay----------------------------- */
+
+.pixelify-sans-pixel {
+  font-family: "Pixelify Sans" !important;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}

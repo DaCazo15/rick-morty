@@ -1,0 +1,8 @@
+@import 'tailwindcss';
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+/*Fuentes*/
+@import "./assets/fonts/fonts.css";
+
+/*Colores*/
+@import "./assets/colors/Colors.css";
