@@ -1,12 +1,13 @@
 export default function AcercaDe() {
   return (
-    <div className='min-h-screen pb-10 pt-22 w-full flex flex-col items-center justify-center px-2 lg:p-2 overflow-x-hidden'>
+    
+    <div className='min-h-screen pb-10 lg:pt-30 2xl:pt-32 w-full flex flex-col items-center justify-center px-2 lg:p-2 overflow-x-hidden'>
       
       {/* Contenedor Principal con Glassmorphism */}
       <div className="relative w-full flex items-center gap-12 bg-black/20 backdrop-blur-xl rounded-4xl border border-white/10 p-4 lg:p-16 shadow-2xl">
         
         {/* Glow de fondo para dar profundidad */}
-        <div 
+        <div
           className="
             absolute -top-20 -left-20 w-64 h-64 bg-green-500/20 blur-[100px] rounded-full
           "
@@ -15,7 +16,7 @@ export default function AcercaDe() {
         <div className='z-10 flex flex-col flex-1 gap-6'>
           {/* Título con Gradiente */}
           <h2 className='
-            rick-medium text-2xl lg:text-7xl 
+            rick-medium text-2xl lg:text-5xl w-full
             bg-clip-text text-transparent bg-linear-to-r from-green-400 to-blue-500
             drop-shadow-[0_10px_10px_rgba(34,197,94,0.3)]
           '>
@@ -36,7 +37,7 @@ export default function AcercaDe() {
         </div>
 
         {/* Sección del Video con Efecto de Enfoque */}
-        <div className="relative hidden lg:flex group w-full lg:w-1/2  justify-center">
+        <div className="relative hidden 2xl:flex group w-full lg:w-1/2  justify-center">
           {/* Marco decorativo "Portal" */}
           <div className="absolute -inset-1 bg-linear-to-r from-green-500 to-emerald-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
           
