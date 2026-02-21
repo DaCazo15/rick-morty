@@ -10,7 +10,7 @@ export default function Personajes() {
   const [mujer, setMujer] = useState(false)
   const [hombre, setHombre] = useState(false)
   const [filtro, setFiltro] = useState("")
-  const breakPoint = "w-80 md:w-60 lg:w-35 h-15 lg:h-40 2xl:h-80"
+  const breakPoint = "w-80 md:w-60 lg:w-35 h-15 lg:h-45 2xl:h-60"
 
   const personajesPorSeccion = 8
   useEffect(() => {
@@ -76,8 +76,8 @@ console.log(listaFiltrada)
         placeholder="Buscar personaje" 
         onChange={(e) => setFiltro(e.target.value)} 
         className="
-          w-full flex py-1 lg:py-5 px-5 lg:px-10 border-2 
-          lg:text-2xl puppins-medium font-normal
+          w-full flex py-1 lg:py-2 px-5 lg:px-10 border-2 
+          lg:text-xl puppins-medium font-normal
           border-green-700 text-white 
           outline-none
           lg:rounded-2xl rounded-md bg-green-700/20
@@ -95,17 +95,17 @@ console.log(listaFiltrada)
           <>
             {/* Contenedor con llaves decorativas */}
             <div className="flex flex-col lg:flex-row w-full items-center justify-between gap-4">
-              <div className="flex w-full lg:w-auto flex-row lg:flex-col gap-5 lg:mr-5 justify-center items-center">
+              <div className="flex w-full lg:w-auto flex-row lg:flex-col gap-5 md:gap-5 h-full lg:mr-5 justify-center lg:justify-bwtween items-center">
                 <div
                   className={`rounded-2xl cursor-pointer transition-all duration-300 ease-in-out border-b-8 border-r-8 border-b-gray-900 border-r-gray-900 bg-gray-800 hover:bg-gray-700 hover:border-b-gray-800 hover:border-r-gray-800 hover:scale-95 ${breakPoint} px-5 flex items-center justify-center`}
                 >
-                  <img src={female} alt="" className="h-10 lg:h-28 2xl:h-55 invert-50"/>
+                  <img src={female} alt="" className="h-10 lg:h-30 2xl:h-40 invert-50"/>
                 </div>
                 <div 
                   onClick={() => cambioGenero("hombre")}
                   className={`rounded-2xl cursor-pointer transition-all duration-300 ease-in-out border-b-8 border-r-8 border-b-gray-900 border-r-gray-900 bg-gray-800 hover:bg-gray-700 hover:border-b-gray-800 hover:border-r-gray-800 hover:scale-95 ${breakPoint} px-5 flex items-center justify-center`}
                 >
-                  <img src={male} alt="" className="h-10 lg:h-28 2xl:h-55 invert-50"/>
+                  <img src={male} alt="" className="h-10 lg:h-30 2xl:h-40 invert-50"/>
                 </div>
               </div>
               
