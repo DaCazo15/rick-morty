@@ -1,16 +1,58 @@
-# React + Vite
+# Rick & Morty — SPA de Personajes, Episodios y Localizaciones
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto single-page application (SPA) construido con React y Vite que consume la API pública de "Rick and Morty" para mostrar personajes, episodios y localizaciones. La interfaz es responsiva y está organizada en componentes reutilizables, con enfoque en simplicidad y buen rendimiento.
 
-Currently, two official plugins are available:
+**Características principales**
+- **Listado y detalle de personajes:** muestra imagen, especie, estado y ubicación.
+- **Catálogo de episodios:** lista de episodios con búsqueda y filtrado.
+- **Localizaciones:** exploración de localizaciones con sus residentes.
+- **Consumo de API:** peticiones centralizadas a la API de Rick and Morty.
+- **Desarrollo con Vite:** arranque rápido, HMR y bundles eficientes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Estructura del repositorio**
+- `src/`: código fuente de la aplicación.
+	- `components/`: componentes React reutilizables (`NavBar`, `Hero`, etc.).
+	- `pages/`: vistas de página (`Inicio`, `CatalogoPersonajes`, `CatalogoEpisode`, `CatalogoLocation`, `AcercaDe`).
+	- `composables/helpers/`: utilidades y llamados a la API (`PeticionAPI_Personajes.js`, `PeticionAPI_Episodios.js`, `PeticionAPI_Locaciones.js`).
+	- `assets/`: estilos, fuentes e imágenes.
+- `public/`: activos estáticos servidos tal cual.
+- `vite.config.js`, `package.json`: configuración del proyecto y scripts.
 
-## React Compiler
+**Requisitos**
+- Node.js 16+ recomendado.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Instalación y ejecución**
+1. Instalar dependencias:
 
-## Expanding the ESLint configuration
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. Levantar servidor de desarrollo:
+
+```bash
+npm run dev
+```
+
+3. Generar build de producción:
+
+```bash
+npm run build
+```
+
+4. Previsualizar build:
+
+```bash
+npm run preview
+```
+
+**Notas sobre el desarrollo**
+- Las llamadas a la API están encapsuladas en `src/composables/helpers/` para facilitar su mantenimiento y reutilización.
+- El proyecto usa estilos modulares y una estructura de componentes clara para facilitar la escalabilidad.
+
+**Contribuciones**
+Pull requests y issues bienvenidos. Para cambios mayores, abre primero un issue describiendo la propuesta.
+
+**Licencia**
+Proyecto abierto para uso y aprendizaje; incluye dependencias bajo sus respectivas licencias.
+
