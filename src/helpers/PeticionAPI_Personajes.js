@@ -20,7 +20,7 @@ export const personajesAll = async () => {
 
   let allItems = [];
   for (let i = 0; i < 42; i++) {
-    const delay = i > 5 ? 2 : (5 - i)
+    const delay = i > 5 ? 0 : (5 - i)
     const response = await personajes(i+1);
     if (Array.isArray(response)) {
       allItems.push(...response);
