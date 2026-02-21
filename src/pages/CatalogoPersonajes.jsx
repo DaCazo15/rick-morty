@@ -10,7 +10,8 @@ export default function Personajes() {
   const [mujer, setMujer] = useState(false)
   const [hombre, setHombre] = useState(false)
   const [filtro, setFiltro] = useState("")
-  const breakPoint = "w-80 md:w-60 lg:w-35 h-15 lg:h-45 2xl:h-60"
+  const breakPoint = "w-80 md:w-60 lg:w-35 h-15 lg:h-45 2xl:h-55"
+  const breakPoint_clear = "w-80 md:w-60 lg:w-35 h-15"
 
   const personajesPorSeccion = 8
   useEffect(() => {
@@ -60,6 +61,10 @@ export default function Personajes() {
       setMujer(false)
     }
   }
+  const clear = () => {
+    setHombre(false)
+    setMujer(false)
+  }
 
   return (
     <div className="pt-24 min-h-screen w-full flex flex-col gap-10 justify-start items-center text-white px-8 pb-10">
@@ -92,17 +97,22 @@ export default function Personajes() {
             {/* Contenedor con llaves decorativas */}
             <div className="flex flex-col lg:flex-row w-full items-center justify-between gap-4">
               <div className="flex w-full lg:w-auto flex-row lg:flex-col gap-5 md:gap-5 h-full lg:mr-5 justify-center lg:justify-bwtween items-center">
+                <div 
+                  onClick={clear}
+                  className={`${breakPoint_clear} flex justify-center font-bold items-center rounded-2xl cursor-pointer transition-all duration-300 ease-in-out border-b-8 border-r-8 border-b-red-900 border-r-red-900 bg-red-800 hover:bg-red-700 hover:border-b-red-800 hover:border-r-red-800 hover:scale-95 `}
+                >
+                  Limpiar</div>
                 <div
                   onClick={() => cambioGenero("mujer")}
                   className={`rounded-2xl cursor-pointer transition-all duration-300 ease-in-out border-b-8 border-r-8 border-b-gray-900 border-r-gray-900 bg-gray-800 hover:bg-gray-700 hover:border-b-gray-800 hover:border-r-gray-800 hover:scale-95 ${breakPoint} px-5 flex items-center justify-center`}
                 >
-                  <img src={female} alt="" className="h-10 lg:h-30 2xl:h-40 invert-50"/>
+                  <img src={female} alt="" className="h-10 lg:h-30 2xl:h-35 invert-50"/>
                 </div>
                 <div 
                   onClick={() => cambioGenero("hombre")}
                   className={`rounded-2xl cursor-pointer transition-all duration-300 ease-in-out border-b-8 border-r-8 border-b-gray-900 border-r-gray-900 bg-gray-800 hover:bg-gray-700 hover:border-b-gray-800 hover:border-r-gray-800 hover:scale-95 ${breakPoint} px-5 flex items-center justify-center`}
                 >
-                  <img src={male} alt="" className="h-10 lg:h-30 2xl:h-40 invert-50"/>
+                  <img src={male} alt="" className="h-10 lg:h-30 2xl:h-35 invert-50"/>
                 </div>
               </div>
               
