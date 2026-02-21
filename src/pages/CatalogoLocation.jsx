@@ -89,23 +89,23 @@ export default function Locaciones() {
               </div>
             </div>
 
-            <div className="flex items-center gap-6 mt-4">
+            <div className="flex items-center gap-2 lg:gap-6 lg:mt-4 px-5">
               <button 
                 onClick={anteriorSeccion}
                 disabled={paginaActual === 1}
-                className="px-6 py-2 rounded-full cursor-pointer border border-purple-500 bg-purple-500 text-white hover:scale-105 disabled:opacity-30 disabled:hover:bg-transparent transition-all font-bold"
+                className="px-2 py-1 text-ms lg:text-xl lg:px-6 lg:py-2 rounded-full cursor-pointer border border-purple-500 bg-purple-500 text-white hover:scale-105 disabled:opacity-30 disabled:hover:bg-transparent transition-all font-light lg:font-bold"
               >
                 Anterior
               </button>
               
-              <span className="text-5xl rick-medium font-extrabold text-green-500">
+              <span className="text-xl lg:text-5xl rick-medium font-extrabold text-green-500">
                 {paginaActual} / {totalPaginas}
               </span>
 
               <button 
                 onClick={siguienteSeccion}
-                disabled={ultimoIndice >= locacionesListados.length}
-                className="px-6 py-2 rounded-full cursor-pointer border border-green-500 bg-green-500 text-white hover:scale-105 disabled:opacity-30 disabled:hover:bg-transparent transition-all font-bold"
+                disabled={paginaActual === totalPaginas}
+                className="px-2 py-1 text-ms lg:text-xl lg:lg-6 lg:py-2 rounded-full cursor-pointer border border-green-500 bg-green-500 text-white hover:scale-105 disabled:opacity-30 disabled:hover:bg-transparent transition-all font-light lg:font-bold"
               >
                 Siguiente
               </button>

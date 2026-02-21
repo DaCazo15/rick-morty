@@ -1,7 +1,7 @@
 export default function AcercaDe() {
   return (
     
-    <div className='min-h-screen pb-10 lg:pt-30 2xl:pt-32 w-full flex flex-col items-center justify-center px-2 lg:p-2 overflow-x-hidden'>
+    <div className='min-h-screen pb-10 pt-25 lg:pt-30 2xl:pt-32 w-full flex flex-col items-center justify-center px-2 lg:p-2 overflow-x-hidden'>
       
       {/* Contenedor Principal con Glassmorphism */}
       <div className="relative w-full flex items-center gap-12 bg-black/20 backdrop-blur-xl rounded-4xl border border-white/10 p-4 lg:p-16 shadow-2xl">
