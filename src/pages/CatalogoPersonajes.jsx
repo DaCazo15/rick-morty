@@ -34,7 +34,6 @@ export default function Personajes() {
     const coincideGenero = mujer ? pj.gender === "Female" : hombre ? pj.gender === "Male" : true;
     return coincideNombre && coincideGenero;
   });
-console.log(listaFiltrada)
   const totalPaginas = Math.ceil(listaFiltrada.length / personajesPorSeccion);
   const listaOrdenada = [...listaFiltrada].sort(() => Math.random() - 0.5);
   const personajesVisibles = listaOrdenada.slice(primerIndice, ultimoIndice)
@@ -56,12 +55,10 @@ console.log(listaFiltrada)
     if (genero === "mujer") {
       setMujer(true)
       setHombre(false)
-      console.log(mujer)
     }
     if (genero === "hombre") {
       setHombre(true)
       setMujer(false)
-      console.log(hombre)
     }
   }
 
@@ -97,6 +94,7 @@ console.log(listaFiltrada)
             <div className="flex flex-col lg:flex-row w-full items-center justify-between gap-4">
               <div className="flex w-full lg:w-auto flex-row lg:flex-col gap-5 md:gap-5 h-full lg:mr-5 justify-center lg:justify-bwtween items-center">
                 <div
+                  onClick={() => cambioGenero("mujer")}
                   className={`rounded-2xl cursor-pointer transition-all duration-300 ease-in-out border-b-8 border-r-8 border-b-gray-900 border-r-gray-900 bg-gray-800 hover:bg-gray-700 hover:border-b-gray-800 hover:border-r-gray-800 hover:scale-95 ${breakPoint} px-5 flex items-center justify-center`}
                 >
                   <img src={female} alt="" className="h-10 lg:h-30 2xl:h-40 invert-50"/>
