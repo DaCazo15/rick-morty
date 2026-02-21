@@ -1,38 +1,43 @@
-import axios from 'axios'
+import axios from 'axios';
 
-const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-const personajes = async (page = 1) => {
+// Función para obtener una página individual
+const fetchPage = async (page) => {
     try {
         const response = await axios.get(`https://rickandmortyapi.com/api/character?page=${page}`);
-        return response.data.results; 
-    } catch (err) {
-        console.error("Error en la petición interdimensional:", err.message);
-        return null; 
+        return response.data.results;
+    } catch (error) {
+        console.error(`Fallo en la página ${page}:`, error);
+        return []; // Retornamos array vacío si una página falla para no romper el push
     }
-}
+};
 
 export const personajesAll = async () => {
-
-  const cachedData = localStorage.getItem('personajes');
-  if (cachedData) {
-      return JSON.parse(cachedData);
-  }
-
-  let allItems = [];
-  for (let i = 0; i < 42; i++) {
-    const delay = i > 50 ? 2 : (50 - i)
-    const response = await personajes(i+1);
-    if (Array.isArray(response)) {
-      allItems.push(...response);
+    const cachedData = localStorage.getItem('personajes');
+    
+    if (cachedData) {
+        const parsed = JSON.parse(cachedData);
+        if (parsed.length > 0) return parsed; // Solo retornamos si hay datos reales
     }
-    await sleep(Math.max(0, delay))
-  }
-  saveLocal(allItems)
-  return allItems;
-}
 
-const saveLocal = (data) => {
-    if (data && data.length > 0) {
-        localStorage.setItem('personajes', JSON.stringify(data));
+    // Como experto Full-Stack, sabemos que 42 peticiones son demasiadas para un cliente.
+    // Vamos a traer las primeras 10 páginas (200 personajes) de golpe para velocidad.
+    const totalPages = 10; 
+    const promises = [];
+
+    for (let i = 1; i <= totalPages; i++) {
+        promises.push(fetchPage(i));
     }
-}
+
+    try {
+        const results = await Promise.all(promises);
+        const allItems = results.flat(); // Aplana los arrays de cada página en uno solo
+        
+        if (allItems.length > 0) {
+            localStorage.setItem('personajes', JSON.stringify(allItems));
+        }
+        return allItems;
+    } catch (error) {
+        console.error("Fallo masivo en el portal:", error);
+        return [];
+    }
+};

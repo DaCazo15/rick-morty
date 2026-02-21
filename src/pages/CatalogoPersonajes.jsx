@@ -35,8 +35,7 @@ export default function Personajes() {
     return coincideNombre && coincideGenero;
   });
   const totalPaginas = Math.ceil(listaFiltrada.length / personajesPorSeccion);
-  const listaOrdenada = [...listaFiltrada].sort(() => Math.random() - 0.5);
-  const personajesVisibles = listaOrdenada.slice(primerIndice, ultimoIndice)
+  const personajesVisibles = listaFiltrada.slice(primerIndice, ultimoIndice)
 
   useEffect(() => {
     setPaginaActual(1);
